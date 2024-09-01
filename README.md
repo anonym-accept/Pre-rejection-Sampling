@@ -31,6 +31,6 @@ can obtain the cycles of each subroutine for parameter set 1 (corresponding to t
 
 ### Other Prerequisites
 
-Some of the test programs in this repository also require [OpenSSL](https://openssl.org) as Dilithium. 
+Some of the test programs in this repository also require [OpenSSL](https://openssl.org) as Dilithium.
 
 We refer to [Dilithium](https://github.com/pq-crystals/dilithium) for other usages like shared libraries.
