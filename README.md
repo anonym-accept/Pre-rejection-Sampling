@@ -1,0 +1,36 @@
+# Pre-rejection Sampling Towards Dilithium
+
+This repository is developed based on the original [Dilithium](https://github.com/pq-crystals/dilithium) repository. We implemented the pre-rejection sampling technnique in the key generation process. The usage of this repository is the same as that of [Dilithium](https://github.com/pq-crystals/dilithium). We explain our experiments as follows.
+
+## Instructions of our experiment
+
+#### Rejections of the fourth condition
+
+You can count the number of rejections of the fourth rejection condition by add a counter in the `crypto_sign_signature()` function of the file `ref/sign.c`.
+
+In testing, you can use the CMake tools. For example, on Linux, by calling 
+```sh
+mkdir build && cd build && cmake .. && make && 
+```
+then, all the produced executables are listed in directory `build/ref`. You can run 
+```sh
+ cd ./build/ref && ./test_dilithium2_ref
+```
+to obtain the results of the parameter set 1 (corresponding to the NIST security level 2). Similarlly, the executables `./test_dilithium3_ref` and `./test_dilithium5_ref` are shown for the parameter set 2 (corresponding to the NIST security level 3) and the parameter set 3 (corresponding to the NIST security level 5), respectively.
+
+#### Test speed
+To test the running speed of each subroutine (KeyGen, Sign and Verify), you need to use `Makefile` that we provided in both `./ref` and `./avx2` directories. For example, in `./ref`, you can run 
+```sh
+make speed
+```
+then, the executables `test_speed2`,`test_speed3` and `test_speed5` are generated in directory `./ref/test`. Run
+```sh
+cd ./ref/test && ./test_speed2
+```
+can obtain the cycles of each subroutine for parameter set 1 (corresponding to the NIST security level 2).
+
+### Other Prerequisites
+
+Some of the test programs in this repository also require [OpenSSL](https://openssl.org) as Dilithium. 
+
+We refer [Dilithium](https://github.com/pq-crystals/dilithium) to for other usages like shared libraries.
