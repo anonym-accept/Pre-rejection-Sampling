@@ -6,9 +6,9 @@ This repository is developed based on the original [Dilithium](https://github.co
 
 #### Rejections of the fourth condition
 
-You can count the number of rejections of the fourth rejection condition by add a counter in the `crypto_sign_signature()` function of the file `ref/sign.c`.
+You can count the number of rejections of the fourth rejection condition by adding a counter in the `crypto_sign_signature()` function of the file `ref/sign.c`.
 
-In testing, you can use the CMake tools. For example, on Linux, by calling 
+When testing, you can use the CMake tools. For example, on Linux, by calling 
 ```sh
 mkdir build && cd build && cmake .. && make
 ```
