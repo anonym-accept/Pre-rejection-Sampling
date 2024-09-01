@@ -10,7 +10,7 @@ You can count the number of rejections of the fourth rejection condition by add 
 
 In testing, you can use the CMake tools. For example, on Linux, by calling 
 ```sh
-mkdir build && cd build && cmake .. && make && 
+mkdir build && cd build && cmake .. && make
 ```
 then, all the produced executables are listed in directory `build/ref`. You can run 
 ```sh
