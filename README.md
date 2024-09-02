@@ -29,6 +29,8 @@ cd ./ref/test && ./test_speed2
 ```
 can obtain the cycles of each subroutine for parameter set 1 (corresponding to the NIST security level 2).
 
+We also note that the default optimization level of C compiler is `O3`. To test the unoptimized code (without C compiler optimization), one can change the optimization level to `O0`. Specifically, in the third and fourth lines of the file `./ref/Makefile`, change the compilation parameter `-O3` to `-O0`.
+
 ### Other Prerequisites
 
 Some of the test programs in this repository also require [OpenSSL](https://openssl.org) as Dilithium.
